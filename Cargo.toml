@@ -1,0 +1,11 @@
+[package]
+name = "steam-quick-switcher"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.68"
+slint = "1.1.0"
+
+[build-dependencies]
+slint-build = "1.1.0"

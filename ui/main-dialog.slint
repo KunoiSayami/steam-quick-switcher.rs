@@ -1,0 +1,28 @@
+import { Button, VerticalBox, ComboBox } from "std-widgets.slint";
+export component MainWindow {
+    callback click-ok(int);
+    in property <[string]> accounts;
+    in property <string> current-account: "(no-account)";
+    height: 150px;
+    width: 250px;
+    VerticalBox {
+        alignment: start;
+        Text {
+            height: 50px;
+            text: "Steam account switcher";
+            font-size: 18px;
+            horizontal-alignment: center;
+        }
+        cb := ComboBox {
+            model: accounts;
+        }
+        HorizontalLayout {
+            alignment: center;
+            btn := Button {
+                text: "OK!";
+                clicked => {root.click-ok(cb.current-index)}
+            }
+        }
+    }
+
+}
